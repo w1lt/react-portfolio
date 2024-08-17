@@ -1,12 +1,14 @@
 import { Container, Text } from "@mantine/core";
 import { thoughts } from "../assets/data/thoughts";
-
-// Define an interface for the thought structure
+import { Helmet } from "react-helmet";
 
 const RandomThoughts: React.FC = () => {
   return (
     <>
       <Container>
+        <Helmet>
+          <title>Will Whitehead - Ideas</title>
+        </Helmet>
         <Text fw={200} mt="xl" mb="sm" size="xl">
           Ideas
         </Text>
@@ -14,7 +16,7 @@ const RandomThoughts: React.FC = () => {
         {
           // Render the actual content once loaded
           thoughts.map((thought) => (
-            <Text my="xs" c="dimmed">
+            <Text my="xs" fw={300}>
               - {thought}
             </Text>
           ))

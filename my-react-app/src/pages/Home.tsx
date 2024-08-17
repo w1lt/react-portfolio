@@ -10,21 +10,25 @@ import {
 import { IconExternalLink } from "@tabler/icons-react";
 import { projects, experience } from "../assets/data/home"; // Import the data
 import { useMediaQuery } from "@mantine/hooks";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
   return (
     <Container>
+      <Helmet>
+        <title>Will Whitehead</title>
+      </Helmet>
       <Text fw={200} mt="xl" mb="sm" size="xl">
         About Me
       </Text>
-      <Text c="dimmed" size="md">
+      <Text size="md" fw={300}>
         Hi, I'm Will. I'm a CS student at the Univeristy of Kansas and a
         passionate software developer with a strong background in web
         development.
       </Text>
 
-      <Text c="dimmed" size="md" mb="xl" mt="sm">
+      <Text size="md" mb="xl" mt="sm" fw={300}>
         I'm currently working on creating <u>CSjobs</u> and <u>Tickget</u>. I'm
         excited to start my next semester at KU and am open to summer '25
         internship roles.
@@ -96,19 +100,20 @@ const Home = () => {
       <Paper withBorder p="lg">
         {experience.map((exp, index) => (
           <div key={index}>
-            <Text size="md">
+            <Text size="md" mt="xs">
               {exp.role} at {exp.company}
             </Text>
             <Text c="dimmed" size="sm">
               {exp.duration}
             </Text>
-            <Text mt="sm" c="dimmed">
-              <ul style={{ marginTop: "0.5rem" }}>
-                {exp.details.map((detail, i) => (
-                  <li key={i}>{detail}</li>
-                ))}
-              </ul>
-            </Text>
+
+            <Group ml="sm" mt="xs" gap="xs">
+              {exp.details.map((detail) => (
+                <Text mt={0} pt={0} c="dimmed">
+                  - {detail}
+                </Text>
+              ))}
+            </Group>
           </div>
         ))}
       </Paper>

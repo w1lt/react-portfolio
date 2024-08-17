@@ -37,7 +37,7 @@ export const experience = [
     company: "Tradebot",
     duration: "Jun 2024 - Jul 2024",
     details: [
-      "Developed a web dashboard using Pandas and Numpy to aggregate and display market data from billions of daily events.",
+      "Developed a dashboard using Pandas and Numpy to aggregate market data from billions of daily events.",
       "Attended market microstructure lectures to deepen understanding of exchanges and market event dynamics.",
     ],
   },
