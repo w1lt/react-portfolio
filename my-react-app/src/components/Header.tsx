@@ -1,16 +1,23 @@
 import { Link, useLocation } from "react-router-dom";
 import { Flex, Group, Text, UnstyledButton, Paper } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
+import { useState } from "react";
 
 const Header = () => {
   const location = useLocation();
   const isMobile = useMediaQuery("(max-width: 768px)");
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  const navItems = [
+    { label: "home", path: "/" },
+    { label: "other", path: "/other" },
+  ];
 
   return (
     <>
       <Paper withBorder p="sm" my="md">
         <Text fw={300} size="md" ta="center">
-          ~ i'm open to summer '25 internship roles! ~
+          👋 i'm open to summer '25 internship roles!
         </Text>
       </Paper>
 
@@ -27,26 +34,34 @@ const Header = () => {
         )}
 
         <Group gap="lg">
-          <UnstyledButton
-            component={Link}
-            to="/"
-            style={{
-              color: "inherit",
-            }}
-            fw={location.pathname === "/" ? 500 : 200}
-          >
-            home
-          </UnstyledButton>
-          <UnstyledButton
-            component={Link}
-            to="/other"
-            style={{
-              color: "inherit",
-            }}
-            fw={location.pathname === "/other" ? 500 : 200}
-          >
-            other
-          </UnstyledButton>
+          {navItems.map((item, index) => (
+            <UnstyledButton
+              key={item.path}
+              component={Link}
+              to={item.path}
+              style={{
+                color: "inherit",
+                position: "relative",
+                fontWeight: location.pathname === item.path ? 600 : 200,
+                transition: "color 0.2s ease",
+              }}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+            >
+              {item.label}
+              <span
+                style={{
+                  position: "absolute",
+                  left: 0,
+                  bottom: -2,
+                  height: 2,
+                  width: hoveredIndex === index ? "100%" : "0%",
+                  backgroundColor: "currentColor",
+                  transition: "width 0.3s ease",
+                }}
+              />
+            </UnstyledButton>
+          ))}
         </Group>
       </Flex>
     </>

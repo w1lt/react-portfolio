@@ -14,8 +14,8 @@ const RandomThoughts: React.FC = () => {
         {
           // Render the actual content once loaded
           thoughts.map((thought) => (
-            <Text size="sm" my="xs" c="dimmed">
-              - {thought.content}
+            <Text my="xs" c="dimmed">
+              - {thought}
             </Text>
           ))
         }

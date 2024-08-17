@@ -18,12 +18,16 @@ const Home = () => {
       <Text fw={200} mt="xl" mb="sm" size="xl">
         About Me
       </Text>
-      <Text c="dimmed" size="md" mb="xl">
+      <Text c="dimmed" size="md">
         Hi, I'm Will. I'm a CS student at the Univeristy of Kansas and a
         passionate software developer with a strong background in web
-        development. I'm currently working on creating <u>CSjobs</u> and{" "}
-        <u>Tickget</u>. I'm excited to start my next semester at KU and am open
-        to summer '25 internship roles.
+        development.
+      </Text>
+
+      <Text c="dimmed" size="md" mb="xl" mt="sm">
+        I'm currently working on creating <u>CSjobs</u> and <u>Tickget</u>. I'm
+        excited to start my next semester at KU and am open to summer '25
+        internship roles.
       </Text>
 
       {/* Projects Section */}
@@ -63,7 +67,7 @@ const Home = () => {
 
             <Group mt="sm" gap={7}>
               {project.tags.map((tag, i) => (
-                <Badge variant="light" key={i}>
+                <Badge variant="outline" key={i}>
                   {tag}
                 </Badge>
               ))}

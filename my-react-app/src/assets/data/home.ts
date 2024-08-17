@@ -5,7 +5,7 @@ export const projects = [
     title: "Tickget",
     description:
       "High-performance ticket resale platform for students, ensuring seamless and secure transactions.",
-    link: "", // Replace with your project link
+    link: "https://github.com/w1lt/tickget", // Replace with your project link
     tags: ["TypeScript", "Express", "React", "Postgres"],
   },
   {
