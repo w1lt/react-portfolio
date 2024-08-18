@@ -5,6 +5,7 @@ import { AnimatePresence } from "framer-motion";
 import Home from "./pages/Home";
 import RandomThoughts from "./pages/ST";
 import PageTransition from "./components/PageTransition";
+import Resume from "./pages/Resume";
 
 const AnimatedRoutes: React.FC = () => {
   const location = useLocation();
@@ -25,6 +26,14 @@ const AnimatedRoutes: React.FC = () => {
           element={
             <PageTransition>
               <RandomThoughts />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/resume"
+          element={
+            <PageTransition>
+              <Resume />
             </PageTransition>
           }
         />
