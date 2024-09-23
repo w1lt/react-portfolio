@@ -3,7 +3,6 @@ import React from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Home from "./pages/Home";
-import RandomThoughts from "./pages/ST";
 import PageTransition from "./components/PageTransition";
 import Resume from "./pages/Resume";
 
@@ -21,14 +20,7 @@ const AnimatedRoutes: React.FC = () => {
             </PageTransition>
           }
         />
-        <Route
-          path="/other"
-          element={
-            <PageTransition>
-              <RandomThoughts />
-            </PageTransition>
-          }
-        />
+
         <Route
           path="/resume"
           element={

@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 
 const App = () => {
   return (
-    <MantineProvider>
+    <MantineProvider defaultColorScheme="dark">
       <Container>
         <Router>
           <Header />

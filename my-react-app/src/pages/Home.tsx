@@ -8,7 +8,7 @@ import {
   Container,
 } from "@mantine/core";
 import { IconExternalLink } from "@tabler/icons-react";
-import { projects, experience } from "../assets/data/home"; // Import the data
+import { projects } from "../assets/data/home"; // Import the data
 import { useMediaQuery } from "@mantine/hooks";
 import { Helmet } from "react-helmet";
 
@@ -91,32 +91,6 @@ const Home = () => {
           GitHub
         </a>
       </Text>
-
-      {/* Experience Section */}
-      <Text fw={200} mt="xl" mb="sm" size="xl">
-        Experience
-      </Text>
-
-      <Paper withBorder p="lg">
-        {experience.map((exp, index) => (
-          <div key={index}>
-            <Text size="md" mt="xs">
-              {exp.role} at {exp.company}
-            </Text>
-            <Text c="dimmed" size="sm">
-              {exp.duration}
-            </Text>
-
-            <Group ml="sm" mt="xs" gap="xs">
-              {exp.details.map((detail) => (
-                <Text mt={0} pt={0} c="dimmed">
-                  - {detail}
-                </Text>
-              ))}
-            </Group>
-          </div>
-        ))}
-      </Paper>
     </Container>
   );
 };
